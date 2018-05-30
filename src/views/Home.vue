@@ -1,16 +1,18 @@
 <template>
- <div class="container">
-
- </div>
+  <div class="container">
+    <TheHeading></TheHeading>
+    <TheContent></TheContent>
+  </div>
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue'
+import TheHeading from '@/components/TheHeading.vue'
+import TheContent from '@/components/Content/TheContent.vue'
 
 export default {
-  name: 'home',
   components: {
-    HelloWorld
+    TheHeading,
+    TheContent
   }
 }
 </script>
