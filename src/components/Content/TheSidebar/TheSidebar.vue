@@ -42,9 +42,101 @@
   </div>
 </template>
 
+
 <style lang="scss" scoped>
-.sidebar {
+  .sidebar {
     background-color: var(--color-grey-dark-1);
     flex: 0 0 18%; // define width - flex-grow:don't grow, flex-shrink:dont shrink, flex basis: 18% for width
+    display: flex;
+    flex-direction: column; // change direction from left to right to column
+    justify-content: space-between;
   }
+
+  .side-nav {
+  font-size: 1.4rem;
+  list-style: none;
+  margin-top: 3.5rem;
+
+   @media only screen and (max-width: 56.75em) {
+     margin: 0;
+     display: flex;
+    }
+
+  &__item {
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: .5rem;
+    }
+     @media only screen and (max-width: 56.75em) {
+      flex: 1;
+    }
+  }
+  &__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: var(--color-primary-2);
+    transform: scaleY(0);
+    transition: transform .2s, width .4s cubic-bezier(1, 0, 0, 1) .2s, background-color .1s;
+  }
+  &__item:hover::before,
+  &__item--active::before {
+    transform: scaleY(1);
+    width: 100%;
+  }
+  &__item:active::before {
+    background-color: var(--color-primary-light);
+  }
+  &__link:link,
+  &__link:visited {
+    color: var(--color-grey-light-1);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 1.5rem 3rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+
+     @media only screen and (max-width: 56.75em) {
+     justify-content: center;
+     padding: 2rem;
+    }
+
+     @media only screen and (max-width: 37.5em) {
+     flex-direction: column;
+     padding: 1.5rem .5rem;
+    }
+  }
+  &__icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-right: 2rem;
+    fill: currentColor;
+
+     @media only screen and (max-width: 56.75em) {
+    margin: 0;
+    margin-bottom: .5rem;
+    width: 1.5rem;
+    height: 1.5rem; 
+    }
+  }
+}
+
+///////////////////////////////////////////////////////
+// LEGAL TEXT
+.legal {
+  font-size: 1.2rem;
+  color: var(--color-grey-light-4);
+  text-align: center;
+  padding: 2.5rem;
+
+   @media only screen and (max-width: 56.75em) {
+     display: none;
+    }
+}
 </style>
