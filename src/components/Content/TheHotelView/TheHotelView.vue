@@ -1,15 +1,20 @@
 <template>
   <div class="hotel-view">
     <PhotoGallery></PhotoGallery>
+    <HotelOverview></HotelOverview>
+
   </div>
 </template>
 
 <script>
-import PhotoGallery from '@/components/Content/TheHotelView/PhotoGallery.vue';
+import PhotoGallery from '@/components/Content/TheHotelView/PhotoGallery.vue'
+import HotelOverview from '@/components/Content/TheHotelView/HotelOverview.vue'
+
 
 export default {
   components: {
     PhotoGallery,
+    HotelOverview
     
     }
 }
