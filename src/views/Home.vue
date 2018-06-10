@@ -24,5 +24,11 @@ export default {
   background-color: var(--color-grey-light-2);
   box-shadow: var(--shadow-dark);
   min-height: 50rem;
+
+   @media only screen and (max-width: 75em) {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
 }
 </style>
