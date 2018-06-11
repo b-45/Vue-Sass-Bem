@@ -22,6 +22,10 @@ export default {
 <style lang="scss" scoped>
   .content{
     display: flex; // places side bar and content side by side. 
+   
+   @media only screen and (max-width: 56.75em) {
+      flex-direction: column;
+    }
   }
 
 
